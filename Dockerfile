@@ -28,6 +28,7 @@ RUN	set -x && \
 	#
 	curl -Lk http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz | gunzip | tar x -C /tmp/files && \
 	#
+	#
 	cd /tmp/files/nginx-$NGINX_VERSION && \
 	#Add user
         mkdir -p /opt/www && \
