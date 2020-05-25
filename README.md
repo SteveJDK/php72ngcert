@@ -1,5 +1,5 @@
 # php72ngcert
-php7.2 with nginx and certbot
+php7.2fpm with nginx and certbot
 
 ## Latest version:
 
