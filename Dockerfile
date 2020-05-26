@@ -25,7 +25,6 @@ ADD files/ /tmp/files/
 
 RUN	set -x && \
 	#
-	#
 	curl -Lk http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz | gunzip | tar x -C /tmp/files && \
 	#
 	#
