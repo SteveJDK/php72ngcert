@@ -18,6 +18,7 @@ RUN set -x && \
     && pecl install xdebug-2.6.0 \
     && pecl install seaslog \
     && docker-php-ext-enable redis xdebug seaslog \
+    && mkdir -p /tmp/phplog/seaslog \
     && docker-php-source delete \
     && apt-get install -y certbot python-certbot-nginx
 
@@ -52,6 +53,7 @@ RUN cp -f /tmp/files/start.sh /start.sh && \
         cp -f /tmp/files/docker-php-ext-seaslog.ini /usr/local/etc/php/conf.d/docker-php-ext-seaslog.ini && \
         cp -f /tmp/files/php.ini /usr/local/etc/php/php.ini && \
 	cp -f /tmp/files/index.php /opt/www && \
+        chown -R www-data:www-data /tmp/phplog/seaslog  && \
 	#
         #
         curl -Lk https://bootstrap.pypa.io/ez_setup.py | python && \
